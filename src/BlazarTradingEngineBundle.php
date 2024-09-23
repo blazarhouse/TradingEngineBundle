@@ -2,7 +2,6 @@
 
 namespace Blazar\TradingEngine;
 
-use Blazar\TradingEngine\Service\TradingEngineClient;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -21,10 +20,7 @@ class BlazarTradingEngineBundle extends AbstractBundle
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        $container->parameters()->set('blazar.trading_engine.project', $config['project']);
         $container->import('../config/services.yaml');
-        $container->services()->get(TradingEngineClient::class)->arg(0, $config['project']);
-
-        // To define parameters
-//        $container->parameters()->set('acme_hello.phrase', $config['phrase']);
     }
 }

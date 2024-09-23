@@ -1,5 +1,7 @@
 services:
-  Blazar\TradingEngine\Service\TradingEngineClient: ~
+  Blazar\TradingEngine\Service\TradingEngineClient:
+    arguments:
+      $project: '%blazar.trading_engine.project%'
 
 
 #framework:
