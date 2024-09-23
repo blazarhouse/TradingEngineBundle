@@ -1,4 +1,15 @@
 services:
+
+  _instanceof:
+    Blazar\TradingEngine\Model\TradingEngineEventHandlerInterface:
+      tags: [ 'blazar.trading_engine.trading_event_handler' ]
+
+  Blazar\TradingEngine\Serializer\TradingEngineEventSerializer: ~
+  Blazar\TradingEngine\MessageHandler\TradingEngineEventMessageHandler:
+    arguments:
+      $handlers: !tagged { tag: 'blazar.trading_engine.trading_event_handler' , default_priority_method: priority }
+    autowire: true
+    autoconfigure: true
   Blazar\TradingEngine\Service\TradingEngineClient:
     autowire: true
     arguments:
