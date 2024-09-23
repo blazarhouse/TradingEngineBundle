@@ -14,6 +14,7 @@ class TradingEngineClient
         private readonly MessageBusInterface $bus,
     )
     {
+        dd('ko');
     }
 
     public function watch(TradingAccountInterface $tradingAccount, bool $watchBalance = false, bool $watchTraders = false, bool $watchPositions = false): void

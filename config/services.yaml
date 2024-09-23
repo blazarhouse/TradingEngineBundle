@@ -1,2 +1,27 @@
 services:
   Blazar\TradingEngine\Service\TradingEngineClient: ~
+
+
+#framework:
+#  messenger:
+#    serializer:
+#      default_serializer: messenger.transport.symfony_serializer
+#      symfony_serializer:
+#        format: json
+#        context: { }
+#    failure_transport: failed
+#
+#    transports:
+#      websockets: '%env(MESSENGER_TRANSPORT_WEBSOCKETS_DSN)%?cacert=%kernel.project_dir%/data/AmazonRootCA1.pem'
+#      tradingEngineEvents:
+#        dsn: '%env(MESSENGER_TRANSPORT_TRADING_ENGINE_EVENTS_DSN)%%env(TRADING_ENGINE_PROJECT)%?cacert=%kernel.project_dir%/data/AmazonRootCA1.pem'
+#        serializer: App\Core\TradingEngine\TradingEngineEventMessageSerializerEncoder
+#
+#    default_bus: messenger.bus.default
+#
+#    buses:
+#      messenger.bus.default: []
+#
+#    routing:
+#      App\Core\TradingEngine\TradingEngineMessage: websockets
+#      App\Core\TradingEngine\TradingEngineEventMessage: tradingEngineEvents
