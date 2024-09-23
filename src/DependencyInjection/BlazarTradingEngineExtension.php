@@ -10,9 +10,4 @@ class BlazarTradingEngineExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
     }
-
-    public function getAlias(): string
-    {
-        return 'trading_engine';
-    }
 }

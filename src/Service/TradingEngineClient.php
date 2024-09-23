@@ -5,19 +5,15 @@ namespace Blazar\TradingEngine\Service;
 use Blazar\TradingEngine\Message\TradingEngineMessage;
 use Blazar\TradingEngine\Model\TradeOrder;
 use Blazar\TradingEngine\Model\TradingAccountInterface;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 class TradingEngineClient
 {
-    private string $project;
-
     public function __construct(
+        private readonly string $project,
         private readonly MessageBusInterface $bus,
-        ParameterBagInterface $parameterBag,
     )
     {
-        $this->project = $parameterBag->get('trading_engine.project');
     }
 
     public function watch(TradingAccountInterface $tradingAccount, bool $watchBalance = false, bool $watchTraders = false, bool $watchPositions = false): void
