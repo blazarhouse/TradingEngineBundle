@@ -14,6 +14,7 @@ class BlazarTradingEngineBundle extends AbstractBundle
         $definition->rootNode()
             ->children()
                 ->scalarNode('project')->end()
+                ->scalarNode('ca_cert')->defaultNull()->end()
             ->end()
         ;
     }
@@ -21,6 +22,7 @@ class BlazarTradingEngineBundle extends AbstractBundle
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->parameters()->set('blazar.trading_engine.project', $config['project']);
+        $container->parameters()->set('blazar.trading_engine.ca_cert', $config['ca_cert']);
         $container->import('../config/services.yaml');
     }
 }
