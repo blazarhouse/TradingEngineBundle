@@ -21,6 +21,8 @@ class BlazarTradingEngineBundle extends Bundle
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        $container->import('../config/services.yaml');
+
         // the "$config" variable is already merged and processed so you can
         // use it directly to configure the service container (when defining an
         // extension class, you also have to do this merging and processing)
