@@ -1,4 +1,9 @@
 services:
+
+  _instanceof:
+    Blazar\TradingEngine\Model\TradingEngineEventHandlerInterface:
+      tags: [ 'blazar.trading_engine.trading_event_handler' ]
+
   Blazar\TradingEngine\Serializer\TradingEngineEventSerializer: ~
   Blazar\TradingEngine\MessageHandler\TradingEngineEventMessageHandler:
     arguments:
