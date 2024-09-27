@@ -32,4 +32,4 @@ framework:
         routing:
           Blazar\TradingEngine\Message\TradingEngineMessage: websockets
           Blazar\TradingEngine\Message\TradingEngineEventMessage: tradingEngineEvents
-``
+```
